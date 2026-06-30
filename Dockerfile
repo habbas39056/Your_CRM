@@ -1,5 +1,5 @@
 # Stage 1: Build the React frontend
-FROM node:20-alpine AS frontend-build
+FROM node:20-slim AS frontend-build
 WORKDIR /app/ClientApp
 COPY ClientApp/package*.json ./
 RUN npm ci --legacy-peer-deps
@@ -7,7 +7,7 @@ COPY ClientApp/ ./
 RUN npm run build
 
 # Stage 2: Production - Node.js backend serving built frontend
-FROM node:20-alpine
+FROM node:20-slim
 WORKDIR /app
 
 # Copy backend package files and install production deps
