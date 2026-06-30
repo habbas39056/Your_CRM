@@ -2,7 +2,7 @@
 FROM node:20-alpine AS frontend-build
 WORKDIR /app/ClientApp
 COPY ClientApp/package*.json ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 COPY ClientApp/ ./
 RUN npm run build
 
