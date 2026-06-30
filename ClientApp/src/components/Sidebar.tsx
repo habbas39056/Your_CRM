@@ -8,10 +8,9 @@ import {
   BarChart3, 
   BookOpen, 
   CreditCard, 
-  Lock, 
-  Settings, 
-  HelpCircle, 
-  LogOut,
+  Lock,
+  Settings,
+  HelpCircle,
   KanbanSquare,
   DollarSign,
   AlertTriangle,
@@ -28,7 +27,7 @@ interface SidebarProps {
   moduleInstruction?: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ role, userName, userProfileImage, moduleComplains, moduleInstruction }) => {
+const Sidebar: React.FC<SidebarProps> = ({ role, userName, moduleComplains, moduleInstruction }) => {
   const isSuperAdmin = role === 'Super Admin';
 
   const handleLogout = async (e: React.MouseEvent) => {
@@ -52,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ role, userName, userProfileImage, mod
   return (
     <aside className="sidebar">
       <div className="brand">
-        <img src="/logo.png" alt="Adwise Labs Ai Solutions" className="brand-logo-img" />
+        <img src="/logo.jpg" alt="Yourstechhub" className="brand-logo-img" />
       </div>
 
       <div className="sidebar-heading">MAIN MENU</div>
@@ -95,38 +94,18 @@ const Sidebar: React.FC<SidebarProps> = ({ role, userName, userProfileImage, mod
               <Users size={18} />
               Leads Center
             </NavLink>
-            <NavLink to="/pipeline" onClick={closeSidebar} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-              <KanbanSquare size={18} />
-              Pipeline
-            </NavLink>
+
             {role !== 'TeamMember' && (
               <>
-                <NavLink to="/commissions" onClick={closeSidebar} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                  <DollarSign size={18} />
-                  Commissions
-                </NavLink>
-                <NavLink to="/team" onClick={closeSidebar} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                  <UsersRound size={18} />
-                  Team Members
-                </NavLink>
+
                 <NavLink to="/billing" onClick={closeSidebar} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
                   <CreditCard size={18} />
                   Billing & Plan
                 </NavLink>
               </>
             )}
-            {moduleComplains && (
-              <NavLink to="/complaints" onClick={closeSidebar} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                <AlertTriangle size={18} />
-                Complaints
-              </NavLink>
-            )}
-            {moduleInstruction && (
-              <NavLink to="/instructions" onClick={closeSidebar} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                <FileText size={18} />
-                Installation Requests
-              </NavLink>
-            )}
+
+
           </>
         )}
       </nav>
@@ -162,26 +141,17 @@ const Sidebar: React.FC<SidebarProps> = ({ role, userName, userProfileImage, mod
         )}
       </nav>
 
-      <div className="user-profile-widget" style={{ marginTop: 'auto' }}>
-        <div className="user-avatar" style={!isSuperAdmin ? { backgroundColor: '#e0f2fe', color: '#0ea5e9', padding: 0, overflow: 'hidden' } : { padding: 0, overflow: 'hidden' }}>
-          {userProfileImage ? (
-            <img src={userProfileImage} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-          ) : null}
-          <div className="user-status" style={{ position: 'absolute', bottom: 0, right: 0, zIndex: 10 }}></div>
-        </div>
-        <div style={{ flex: 1 }}>
-          <div style={{ fontWeight: 600, lineHeight: 1.2, textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden', width: '100px' }}>
-            {userName}
-          </div>
-          <div style={{ color: 'var(--sidebar-text)', fontSize: '0.75rem' }}>
-            {isSuperAdmin ? 'Super Admin' : 'PRO ACCOUNT'}
-          </div>
-        </div>
+      <div className="user-profile-widget" style={{ marginTop: 'auto', borderTop: '1px solid #f1f5f9', paddingTop: '1rem', paddingBottom: '1rem', display: 'flex', flexDirection: 'column' }}>
         <button 
           onClick={handleLogout} 
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', width: '100%', padding: '0.75rem', gap: '0.75rem', color: '#475569', fontWeight: 500, transition: 'all 0.2s', borderRadius: '12px' }}
+          onMouseOver={(e) => { e.currentTarget.style.color = '#ef4444'; e.currentTarget.style.backgroundColor = '#fef2f2'; }}
+          onMouseOut={(e) => { e.currentTarget.style.color = '#475569'; e.currentTarget.style.backgroundColor = 'transparent'; }}
         >
-          <LogOut size={18} />
+          <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#334155', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.85rem' }}>
+            {userName ? userName.charAt(0).toUpperCase() : 'N'}
+          </div>
+          <span>Logout</span>
         </button>
       </div>
     </aside>

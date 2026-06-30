@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import TopHeader from './TopHeader';
+import MobileBottomNav from './MobileBottomNav';
 import './Layout.css';
 
 interface LayoutProps {
@@ -29,9 +30,9 @@ const Layout: React.FC<LayoutProps> = ({ children, role, userName, userProfileIm
       <header className="mobile-nav-header">
         <div className="brand" style={{ margin: 0, padding: 0, fontSize: '1rem' }}>
           {role === 'Super Admin' ? (
-            <img src="/logo.png" alt="Adwise Labs Ai Solutions" style={{ height: '32px', width: 'auto' }} />
+            <img src="/logo.jpg" alt="Yourstechhub" style={{ height: '32px', width: 'auto' }} />
           ) : (
-            <img src="/logo.png" alt="Adwise Labs Ai Solutions" style={{ height: '32px', width: 'auto' }} />
+            <img src="/logo.jpg" alt="Yourstechhub" style={{ height: '32px', width: 'auto' }} />
           )}
         </div>
         
@@ -52,6 +53,8 @@ const Layout: React.FC<LayoutProps> = ({ children, role, userName, userProfileIm
           {children}
         </div>
       </main>
+      
+      <MobileBottomNav role={role} />
     </div>
   );
 };

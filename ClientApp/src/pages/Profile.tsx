@@ -126,8 +126,11 @@ const Profile: React.FC = () => {
         </div>
 
         {activeTab === 'profile' && (
-          <div className="white-box mb-2">
-          <h2 className="box-title mb-2"><User size={20} /> Personal Details</h2>
+          <div className="white-box profile-card mb-2">
+          <div className="profile-header-title">
+            <User size={18} />
+            <h2>Personal Details</h2>
+          </div>
           <form className="profile-form" onSubmit={handleUpdateProfile}>
             <div className="profile-image-section">
               <div className="profile-avatar-large">
@@ -149,16 +152,16 @@ const Profile: React.FC = () => {
 
             <div className="form-grid">
               <div className="form-group">
-                <label className="form-label">Full Name</label>
-                <input type="text" name="name" value={profile.name} onChange={handleProfileChange} className="glass-input" required />
+                <label className="form-label uppercase-label">FULL NAME</label>
+                <input type="text" name="name" value={profile.name} onChange={handleProfileChange} className="solid-input" required />
               </div>
               <div className="form-group">
-                <label className="form-label">Login Email / Username</label>
-                <input type="text" name="email" value={profile.email} onChange={handleProfileChange} className="glass-input" required />
+                <label className="form-label uppercase-label">LOGIN EMAIL / USERNAME</label>
+                <input type="text" name="email" value={profile.email} onChange={handleProfileChange} className="solid-input" required />
               </div>
               <div className="form-group">
-                <label className="form-label"><Lock size={14} className="inline-icon" /> New Password (Leave blank to keep)</label>
-                <input type="password" name="password" value={profile.password} onChange={handleProfileChange} className="glass-input" placeholder="••••••••" />
+                <label className="form-label uppercase-label"><Lock size={12} className="inline-icon" /> NEW PASSWORD (LEAVE BLANK TO KEEP)</label>
+                <input type="password" name="password" value={profile.password} onChange={handleProfileChange} className="solid-input" placeholder="••••••••" />
               </div>
             </div>
 

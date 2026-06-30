@@ -174,7 +174,7 @@ const TopHeader: React.FC<TopHeaderProps> = ({ role, userName, dateString }) => 
     <div className="top-header">
       <div className="header-title">
         <h1>{title}</h1>
-        <p>{subtitle}</p>
+        {role !== 'Super Admin' && <p>{subtitle}</p>}
       </div>
 
       <div className="header-actions">
@@ -190,6 +190,17 @@ const TopHeader: React.FC<TopHeaderProps> = ({ role, userName, dateString }) => 
             <Play size={16} /> {runnerStarting ? 'Loading...' : 'Start Leads'}
           </button>
         )}
+
+        {/* User Profile matching layout */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: '1rem' }}>
+          <div style={{ fontSize: '0.85rem' }}>
+            <span style={{ color: '#64748b' }}>Welcome, </span>
+            <span style={{ color: '#d91b76', fontWeight: 600 }}>{userName || 'User'}</span>
+          </div>
+          <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(to top right, #0a1142, #d91b76)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.875rem' }}>
+            {userName ? userName.charAt(0).toUpperCase() : 'U'}
+          </div>
+        </div>
       </div>
 
       {role !== 'Super Admin' && document.getElementById('mobile-agent-toggle-portal') 

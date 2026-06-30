@@ -333,22 +333,22 @@ const Leads: React.FC = () => {
                 <tr><td colSpan={8} className="empty-state">No leads found.</td></tr>
               ) : currentLeads.map((lead) => (
                 <tr key={lead.id} className={lead.isPaused ? 'row-inactive' : ''}>
-                  <td className="lead-client-cell">
+                  <td className="lead-client-cell" data-label="CLIENT">
                     <div className="lead-client-name">{lead.name || 'Unnamed'}</div>
                     {lead.businessName && <div className="lead-business-name">{lead.businessName}</div>}
                     <div className="lead-client-phone">{lead.phoneNumber}</div>
                   </td>
-                  <td className="lead-service">{lead.service || '—'}</td>
-                  <td className="lead-deal">{formatCurrency(lead.dealValue, customer?.currency)}</td>
-                  <td><span className={`lead-status-badge ${getStatusClass(lead.status)}`}>{lead.status}</span></td>
-                  <td className="lead-assigned">{lead.assignedTo || 'AI Agent'}</td>
-                  <td className="lead-followup">{formatDate(lead.followUpDate)}</td>
-                  <td>
+                  <td className="lead-service" data-label="SERVICE">{lead.service || '—'}</td>
+                  <td className="lead-deal" data-label="DEAL">{formatCurrency(lead.dealValue, customer?.currency)}</td>
+                  <td data-label="STATUS"><span className={`lead-status-badge ${getStatusClass(lead.status)}`}>{lead.status}</span></td>
+                  <td className="lead-assigned" data-label="ASSIGNED">{lead.assignedTo || 'AI Agent'}</td>
+                  <td className="lead-followup" data-label="FOLLOW-UP">{formatDate(lead.followUpDate)}</td>
+                  <td data-label="ACTIVE">
                     <button className={`toggle-status-btn ${lead.isPaused ? 'inactive' : 'active'}`} onClick={() => handleToggleLead(lead)} title={lead.isPaused ? 'Paused — click to activate' : 'Active — click to pause'}>
                       {lead.isPaused ? <ToggleLeft size={22} /> : <ToggleRight size={22} />}
                     </button>
                   </td>
-                  <td className="text-right">
+                  <td className="text-right" data-label="ACTIONS">
                     <div className="lead-actions">
                       <button className="action-btn view" title="View" onClick={() => openViewModal(lead)}><Eye size={15} /></button>
                       <button className="action-btn edit" title="Edit" onClick={() => openEditForm(lead)}><Edit2 size={15} /></button>

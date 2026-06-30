@@ -1,7 +1,9 @@
 .app-container {
   display: flex;
   min-height: 100vh;
-  overflow-x: hidden; /* Prevents global horizontal scrolling */
+  overflow-x: hidden;
+  background: #f4f7f6;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .main-content {
@@ -11,6 +13,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  flex: 1;
   transition: margin-left 0.3s ease, width 0.3s ease;
   min-width: 0; /* Prevents flex children from causing overflow */
 }
@@ -19,6 +22,7 @@
   padding: 2rem;
   box-sizing: border-box;
   width: 100%;
+  flex: 1;
 }
 
 @media (max-width: 768px) {
@@ -75,6 +79,7 @@
     margin-left: 0;
     width: 100%;
     min-height: calc(100vh - 60px); /* Adjust for header height */
+    padding-bottom: 80px; /* Space for MobileBottomNav */
   }
 
   .mobile-nav-header {

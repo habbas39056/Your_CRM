@@ -2,23 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--card-border);
+  padding: 1rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
   flex-wrap: wrap;
   gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .header-title h1 {
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 0 0 0.25rem 0;
-  letter-spacing: -0.5px;
+  color: #0a1142;
+  margin: 0;
 }
 
 .header-title p {
-  color: var(--text-secondary);
-  font-size: 0.8rem;
+  color: #64748b;
+  font-size: 0.85rem;
   margin: 0;
 }
 

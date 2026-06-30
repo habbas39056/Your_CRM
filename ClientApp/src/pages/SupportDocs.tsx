@@ -100,7 +100,7 @@ const SupportDocs: React.FC = () => {
           <a href="#">Terms of Service</a>
           <a href="#">System Status</a>
         </div>
-        <p>© 2026 Adwise AI Platform. All rights reserved.</p>
+        <p>© 2026 Yourstechhub. All rights reserved.</p>
       </footer>
     </div>
   );

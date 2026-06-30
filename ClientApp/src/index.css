@@ -2,15 +2,15 @@
 
 :root {
   /* Brand colors derived from logo */
-  --brand-blue: #2563eb;
+  --brand-blue: #0a1142;
   --brand-red: #e11d48;
-  --brand-peach: #f97316;
-  --brand-primary: #0f172a; /* Dark slate for sidebar */
+  --brand-peach: #0a1142;
+  --brand-primary: #0a1142; /* Dark slate for sidebar */
   
   --sidebar-bg: var(--brand-primary);
   --sidebar-text: #94a3b8;
   --sidebar-text-active: #ffffff;
-  --sidebar-hover-bg: rgba(37, 99, 235, 0.15); /* blue hover */
+  --sidebar-hover-bg: rgba(10, 17, 66, 0.15); /* blue hover */
   
   --main-bg: #f8fafc;
   --card-bg: #ffffff;
@@ -22,7 +22,7 @@
   
   --accent-blue: var(--brand-blue);
   --accent-green: #10b981;
-  --accent-orange: var(--brand-peach);
+  --accent-orange: var(--brand-blue);
   --accent-red: var(--brand-red);
 }
 
@@ -60,7 +60,7 @@ button {
 }
 
 .btn-text {
-  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+  background: #0a1142;
   color: white;
   border: none;
   padding: 0.4rem 0.85rem;
@@ -69,23 +69,23 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(234, 88, 12, 0.2);
+  box-shadow: 0 2px 4px rgba(10, 17, 66, 0.2);
 }
 
 .btn-text:hover {
-  background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+  background: #152063;
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 4px 8px rgba(10, 17, 66, 0.3);
 }
 
 .btn-text:active {
   transform: translateY(1px);
-  box-shadow: 0 1px 2px rgba(234, 88, 12, 0.2);
+  box-shadow: 0 1px 2px rgba(10, 17, 66, 0.2);
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+  background: #0a1142;
   color: white;
   border: none;
   padding: 0.6rem 1.25rem;
@@ -97,18 +97,18 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.25);
+  box-shadow: 0 4px 10px rgba(10, 17, 66, 0.25);
   letter-spacing: 0.3px;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+  background: #152063;
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(234, 88, 12, 0.35);
+  box-shadow: 0 6px 14px rgba(10, 17, 66, 0.35);
   color: white;
 }
 
 .btn-primary:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 4px rgba(234, 88, 12, 0.2);
+  box-shadow: 0 2px 4px rgba(10, 17, 66, 0.2);
 }

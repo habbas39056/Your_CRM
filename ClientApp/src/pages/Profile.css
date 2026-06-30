@@ -82,3 +82,55 @@
 }
 
 .justify-end { justify-content: flex-end; }
+
+.profile-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  background: white;
+  box-shadow: none;
+}
+
+.profile-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+.profile-header-title h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.uppercase-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.solid-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  background: #ffffff;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.solid-input:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(10, 17, 66, 0.1);
+}

@@ -147,7 +147,7 @@ const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-sequelize.sync({ alter: true }).then(async () => {
+sequelize.sync().then(async () => {
   console.log('Database synced successfully with alter: true');
   
   // Create a MySQL trigger to automatically increment MessageCount whenever Summary changes.
