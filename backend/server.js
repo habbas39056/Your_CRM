@@ -138,7 +138,7 @@ app.post('/api/webhook-proxy/:instanceName', async (req, res) => {
 app.use(express.static(path.join(__dirname, '../ClientApp/dist')));
 
 // SPA Fallback (Redirect all other routes to index.html)
-app.get('/{*path}', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../ClientApp/dist/index.html'));
 });
 
