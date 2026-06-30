@@ -83,8 +83,6 @@ function App() {
           role={user.role} 
           userName={user.name} 
           userProfileImage={user.profileImage} 
-          moduleComplains={user.moduleComplains} 
-          moduleInstruction={user.moduleInstruction}
         >
           <Routes>
             <Route path="/" element={user.role === 'Super Admin' ? <Dashboard /> : <ClientDashboard />} />
