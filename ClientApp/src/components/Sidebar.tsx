@@ -4,17 +4,12 @@ import {
   LayoutDashboard, 
   Users, 
   UserPlus,
-  UsersRound,
   BarChart3, 
   BookOpen, 
   CreditCard, 
   Lock,
   Settings,
-  HelpCircle,
-  KanbanSquare,
-  DollarSign,
-  AlertTriangle,
-  FileText
+  HelpCircle
 } from 'lucide-react';
 import { authService } from '../services/api';
 import './Sidebar.css';
@@ -23,11 +18,9 @@ interface SidebarProps {
   role: 'Super Admin' | 'Client' | 'TeamMember';
   userName: string;
   userProfileImage?: string;
-  moduleComplains?: boolean;
-  moduleInstruction?: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ role, userName, moduleComplains, moduleInstruction }) => {
+const Sidebar: React.FC<SidebarProps> = ({ role, userName }) => {
   const isSuperAdmin = role === 'Super Admin';
 
   const handleLogout = async (e: React.MouseEvent) => {
