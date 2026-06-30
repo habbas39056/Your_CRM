@@ -20,8 +20,8 @@ COPY backend/ ./backend/
 # Copy built frontend from Stage 1
 COPY --from=frontend-build /app/ClientApp/dist ./ClientApp/dist
 
-# Expose port
-EXPOSE 5000
-
+# Set port to 80 for Easypanel Traefik defaults
+ENV PORT=80
+EXPOSE 80
 # Start the server
 CMD ["node", "backend/server.js"]
